@@ -6,22 +6,22 @@ const userSchema = new Schema({
   email: {
     type: String,
     unique: true,
-    required: true,
+    required: true
   },
   name: String,
   photoURL: String,
   role: {
     type: String,
     enum: ["ADMIN", "USER"],
-    default: "USER",
-},
+    default: "USER"
+}
 }, 
 {
   timestamps: true,
-  versionKey: false,
+  versionKey: false
 })
 
-userSchema.plugin(PLM, { usernameFiled: 'email' })
+userSchema.plugin(PLM, { usernameField: 'email' })
 
 module.exports = mongoose.model('User', userSchema)
 

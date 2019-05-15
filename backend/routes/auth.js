@@ -1,15 +1,20 @@
 const router = require('express').Router()
-const passport = require('../helpers/passport')
+const passport = require('passport')
 const User = require('../models/User')
 const { isLogged } = require('../helpers/middlewares')
 
 
 //signup 
 router.post('/signup', (req, res, next) => {
+  console.log(req.body)
   User.register(req.body, req.body.password)
     .then(user => {
       passport.authenticate('local', (err, user, info) => {
-        if(err) return res.status(500).json(err)
+        console.log(err,user,info)
+        if(err) {
+          console.log('es el de arriba')
+          return res.status(500).json(err)
+        }
         if(!user) return res.status(401).json({ message: 'No estas registrado, sorry'})
         req.logIn(user, err => {
           if(err) return res.status(401).json(err)
@@ -17,7 +22,9 @@ router.post('/signup', (req, res, next) => {
         })
       })(req, res, next)
     })
-    .catch(err => res.status(500).json(err))
+    .catch(err => {
+      console.log('es el de abajo')
+      return res.status(500).json(err)})
 })
 
 
