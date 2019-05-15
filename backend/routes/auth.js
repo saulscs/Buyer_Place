@@ -41,7 +41,7 @@ router.get('/logout', (req, res, next) => {
   })
 })
 
-//profile 
+//profile or login
 router.get('/profile', isLogged, (req, res, next) => {
   req.status(200).json(req.user)
 })

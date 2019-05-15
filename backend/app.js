@@ -74,5 +74,5 @@ const index = require('./routes/index')
 const auth = require('./routes/auth')
 
 app.use('/', index)
-app.use('/auth', index)
+app.use('/auth', auth)
 module.exports = app
