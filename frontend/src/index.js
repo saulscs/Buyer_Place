@@ -6,9 +6,12 @@ import { BrowserRouter } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css'
 import 'toastr/build/toastr.css'
+import Navbar from './components/Nav/NavBar'
+
 
 const Router = () => (
   <BrowserRouter>
+  <Navbar/>
     <App />
   </BrowserRouter>
 )
