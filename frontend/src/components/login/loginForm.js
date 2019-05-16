@@ -4,6 +4,7 @@ import { Form, Input, Button } from 'antd';
 function LoginForm({ handleInputs, handleSubmit }) {
   return (
     <Form layout="inline">
+    <h1>Iniciar Sesion</h1>
       <Form.Item>
       <Input type="email" name="email" onChange={handleInputs} />
       </Form.Item>

@@ -23,6 +23,20 @@
   color: #61dafb;
 }
 
+.cover{
+
+  height: 500px;
+  background-image: url("/cover2.jpg");
+  padding: 100px 0;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
