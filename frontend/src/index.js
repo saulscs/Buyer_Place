@@ -7,12 +7,15 @@ import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css'
 import 'toastr/build/toastr.css'
 import Navbar from './components/Nav/NavBar'
+import Footer from './components/Nav/FooTer';
+
 
 
 const Router = () => (
   <BrowserRouter>
   <Navbar/>
     <App />
+    <Footer/>
   </BrowserRouter>
 )
 

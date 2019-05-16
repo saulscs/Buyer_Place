@@ -33,9 +33,15 @@
   text-align: center;
   font-weight: 700;
   font-size: 2rem;
-  
 }
 
+.cover h1{
+  color: white;
+}
+
+.cover p{
+  color: white;
+}
 
 @keyframes App-logo-spin {
   from {
