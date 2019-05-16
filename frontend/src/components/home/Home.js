@@ -12,8 +12,8 @@ class Home extends React.Component {
       <Layout>
         {/* cover */}
         <header className="cover">
-        <h1>Home</h1>
-        <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+        <h1>Buyer Place</h1>
+        <p>Compra o vende productos  Apple de forma fácil y rápida. </p>
         </header>
         {/* cards */}
 
