@@ -14,7 +14,11 @@ const userSchema = new Schema({
     type: String,
     enum: ["ADMIN", "USER"],
     default: "USER"
-}
+},
+contributions:[{
+  type:Schema.Types.ObjectId,
+  ref:"Contributions"
+}]
 }, 
 {
   timestamps: true,

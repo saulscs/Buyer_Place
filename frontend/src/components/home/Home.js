@@ -1,6 +1,5 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
-import { Layout, Link } from 'antd';
+import { Layout } from 'antd';
 import { Card, Col, Row } from 'antd';
 const { Content } = Layout;
 const { Meta } = Card;
