@@ -38,21 +38,9 @@ router.post('/login', (req, res, next) => {
       return res.status(200).json(user)
     })
   })(req, res, next)
-})
-
-// //logout
-// router.get('/logout', (req, res, next) => {
-//   req.logOut()
-//   req.session.destroy(err => {
-//     if(!err) res.status(200)
-//   })
-// })
+}) 
 
 
-// //profile or login
-// router.get('/profile', isLogged, (req, res, next) => {
-//   req.status(200).json(req.user)
-// })
 
 // Logged in
 router.get("/loggedin", isLogged, (req, res, next) => {

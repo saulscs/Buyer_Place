@@ -15,6 +15,7 @@ class NormalLoginForm extends React.Component {
           .then(response => {
             console.log(response)
             toastr.success('Se creo tu cuenta')
+       
           })
           .catch(err => {
             console.log(err)
@@ -28,8 +29,13 @@ class NormalLoginForm extends React.Component {
     const { getFieldDecorator } = this.props.form
     return (
       
-      <Form onSubmit={this.handleSubmit} className="login-form">
+      <Form onSubmit={this.handleSubmit } className="login-form">
       <h1>Registrate</h1>
+      <Form.Item>
+          {getFieldDecorator('name', {
+            rules: [{ required: true, message: 'Ingresa tu nombre de usuario' }]
+          })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Nombre" />)}
+        </Form.Item>
         <Form.Item>
           {getFieldDecorator('email', {
             rules: [{ required: true, message: 'Por favor pon tu correo' }]

@@ -13,7 +13,7 @@ import Footer from './components/Nav/FooTer';
 
 const Router = () => (
   <BrowserRouter>
-  <Navbar/>
+    <Navbar/>
     <App />
     <Footer/>
   </BrowserRouter>
