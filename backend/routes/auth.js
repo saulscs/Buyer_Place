@@ -40,19 +40,36 @@ router.post('/login', (req, res, next) => {
   })(req, res, next)
 })
 
-//logout
-router.get('/logout', (req, res, next) => {
-  req.logOut()
+// //logout
+// router.get('/logout', (req, res, next) => {
+//   req.logOut()
+//   req.session.destroy(err => {
+//     if(!err) res.status(200)
+//   })
+// })
+
+
+// //profile or login
+// router.get('/profile', isLogged, (req, res, next) => {
+//   req.status(200).json(req.user)
+// })
+
+// Logged in
+router.get("/loggedin", isLogged, (req, res, next) => {
+  res.status(200).json({ message: "User logged", user: req.user })
+})
+
+// Logout
+router.get("/logout", isLogged, (req, res) => {
+  req.logout()
   req.session.destroy(err => {
-    if(!err) res.status(200)
+    if (!err) {
+      res
+        .status(200)
+        .clearCookie("connect.sid", { path: "/" })
+        .json({ message: "Logged out" })
+    }
   })
 })
-
-//profile or login
-router.get('/profile', isLogged, (req, res, next) => {
-  req.status(200).json(req.user)
-})
-
-
 
 module.exports = router
