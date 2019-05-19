@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Layout, Menu, Input, Button, Icon } from "antd";
+import { Layout, Menu, Input, Button} from "antd";
 import axios from "axios";
 const { Header } = Layout;
 const Search = Input.Search;
@@ -32,7 +32,7 @@ export default class NavBar extends Component {
     return (
       <Layout className="layout">
         <Header>
-          <div className="logo" />
+          
 
           <Menu
             theme="dark"
@@ -47,9 +47,9 @@ export default class NavBar extends Component {
             }}
             
           >
-            <Menu.Item key="Home">
+            <Menu.Item key="Logo">
               <Link to={"/"}>
-                <Icon type="home" theme="filled" />
+              <img className="logo" alt="logo" src="logo2.PNG" ></img>
               </Link>
             </Menu.Item>
 

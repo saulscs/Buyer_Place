@@ -11,9 +11,10 @@ class Home extends React.Component {
       <Layout>
         {/* cover */}
         <header className="cover">
-        <h1>Buyer Place</h1>
-        <p>Compra o vende productos  Apple de forma fácil y rápida. </p>
+        <h1 className="cover-title">Buyer Place</h1>
+        <p className="cover-text">Compra o vende productos  Apple de forma fácil y rápida. </p>
         </header>
+        
         {/* cards */}
 
         <Content style={{ padding: '30px',     margin: '50px' }}>

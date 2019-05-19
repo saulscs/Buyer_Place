@@ -23,24 +23,34 @@
   color: #61dafb;
 }
 
-.cover{
 
+.cover{
   height: 500px;
-  background-image: url("/cover2.jpg");
+  background-image: url("/cover3.jpg");
   padding: 100px 0;
   background-size: cover;
   background-position: center;
   text-align: center;
-  font-weight: 700;
+  -webkit-filter: brightness(90%);
+  filter: brightness(90%);
+  
+}
+
+.cover-title{
+  color: white ;
+  font-size: 6rem;
+  font-weight: 800;
+}
+
+.cover-text{
+  color: white ;
   font-size: 2rem;
+  font-weight: 500;
 }
 
-.cover h1{
-  color: white;
-}
 
-.cover p{
-  color: white;
+.logo{
+  width: 50px;
 }
 
 @keyframes App-logo-spin {
