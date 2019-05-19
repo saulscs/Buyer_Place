@@ -10,7 +10,7 @@ class Login extends Component {
   
   componentWillMount() {
     const user = localStorage.getItem('loggedUser')
-    if (user) return this.props.history.push('/profile')
+    if (user) return this.props.history.push('/login')
   }
 
   state = {
@@ -32,6 +32,7 @@ class Login extends Component {
       .login(form)
       .then(response => {
         if (response.err) return toastr.error(response.err)
+        this.props.history.push('/')
         toastr.success('Ya iniciaste sesión')
         window.localStorage.setItem('loggedUser', JSON.stringify(response.data))
       })

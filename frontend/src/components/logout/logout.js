@@ -1,20 +1,28 @@
-import React from "react"
-import axios from "axios"
-import { Redirect } from "react-router-dom"
+import React, { Component } from 'react'
+import AuthService from "../../services/auth"
+import toastr from "toastr"
 
-class Logout extends React.Component {
-  componentDidMount() {
-    axios
-      .get("https://localhost:3000/auth/logout", {
-        withCredentials: true
-      })
-      .then(res => {
-        console.log("Logged out")
-        window.location.replace("/")
-      })
+const service = new AuthService()
+
+export default class Logout extends Component {
+  
+  handleLogout = () =>{
+    service 
+    .logout()
+    .then (() =>{
+      toastr.success("successful logout!!")
+      window.localStorage.clear() 
+      this.props.history.push('/')
+    })
+    .catch(err => toastr.error(err))
   }
+
   render() {
-    return <Redirect to="/" />
+    return (
+       <div onClick={this.handleLogout}>
+         salir
+       </div>
+    )
   }
 }
-export default Logout
+

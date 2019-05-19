@@ -8,11 +8,11 @@ import Logout from './components/logout/logout'
 
 const Router = () => (
   <Switch>
-    <Route exact path = {'/'} component = {Home}/>
-    <Route exact path ={'/signup'} component ={Signup}/>
-    <Route exact path ={'/login'} component ={Login}/>
-    <Route exact path = {'/profile'} component ={Profile}/>
-    <Route exact path = {'/logout'} component={Logout}/>
+    <Route exact path = '/' component = {Home}/>
+    <Route exact path ='/signup' component ={Signup}/>
+    <Route exact path ='/login' component ={Login}/>
+    <Route exact path = '/profile' component ={Profile}/>
+    <Route exact path = '/logout' component={Logout}/>
   </Switch>
 )
 

@@ -3,30 +3,37 @@ import { Form, Icon, Input, Button } from 'antd'
 import AuthService from '../../services/auth'
 import toastr from 'toastr'
 
+
 const service = new AuthService()
 
 class NormalLoginForm extends React.Component {
+  
+  state={
+    form: { 
+      name: '',
+      email: '', 
+      password: ''
+      
+    }
+  }
+  handleInputs = e => {
+    const { form } = this.state
+    form[e.target.name] = e.target.value
+    this.setState(form)
+  }
+
   handleSubmit = e => {
     e.preventDefault()
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        service
-          .signup(values)
-          .then(response => {
-            console.log(response)
-            toastr.success('Se creo tu cuenta')
-       
-          })
-          .catch(err => {
-            console.log(err)
-            toastr.error('Algo salió mal :( ')
-          })
-      }
-    })
+    service
+    .signup(this.state.form)
+    .then(()=>this.props.history.push('/login'))
+    .catch(err => toastr.error(err))
   }
+
 
   render() {
     const { getFieldDecorator } = this.props.form
+    
     return (
       
       <Form onSubmit={this.handleSubmit } className="login-form">
@@ -34,12 +41,18 @@ class NormalLoginForm extends React.Component {
       <Form.Item>
           {getFieldDecorator('name', {
             rules: [{ required: true, message: 'Ingresa tu nombre de usuario' }]
-          })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Nombre" />)}
+          })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} 
+          name="name"
+          onChange={this.handleInputs}
+          placeholder="Nombre" />)}
         </Form.Item>
         <Form.Item>
           {getFieldDecorator('email', {
             rules: [{ required: true, message: 'Por favor pon tu correo' }]
-          })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Correo" />)}
+          })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} 
+          name="email"
+          onChange={this.handleInputs}
+          placeholder="Correo" />)}
         </Form.Item>
         <Form.Item>
           {getFieldDecorator('password', {
@@ -47,6 +60,8 @@ class NormalLoginForm extends React.Component {
           })(
             <Input
               prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              name="password"
+          onChange={this.handleInputs}
               type="password"
               placeholder="Password"
             />

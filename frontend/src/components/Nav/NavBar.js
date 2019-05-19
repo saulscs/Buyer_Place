@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Layout, Menu, Input, Button} from "antd";
+import { Layout, Menu, Input, Button,Icon} from "antd";
 import axios from "axios";
 const { Header } = Layout;
 const Search = Input.Search;
@@ -12,7 +12,7 @@ export default class NavBar extends Component {
     search: ""
   };
   checkLogged = () => {
-    let loggedUrl = localStorage
+    let loggedUrl = 'http://localhost:3000/auth/loggedin'
     axios
       .get(loggedUrl, { withCredentials: true })
       .then(res => {
@@ -61,8 +61,15 @@ export default class NavBar extends Component {
 
             {isLogged ? (
               <>
-                <Menu.Item key="Iniciar Sesión">
-                  <Link to={"/logout"}>Salir</Link>
+              <Menu.Item key="Perfil">
+                  <Link to={"/profile"}>
+                  <Icon type="user" />
+                  </Link>
+                </Menu.Item>
+
+                <Menu.Item key="salir">
+                  <Link to ={'/'}>Salir</Link>
+                  
                 </Menu.Item>
 
                 <Link to={"/publicar"}>

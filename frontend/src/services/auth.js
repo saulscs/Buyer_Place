@@ -29,7 +29,7 @@ class AuthService {
         return { err: 'Password incorrect' }
       })
   }
-  logout = form => {
+  logout = () => {
     return this.service
       .get('/auth/logout')
       .then(response => response)
