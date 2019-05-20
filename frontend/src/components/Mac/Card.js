@@ -1,18 +1,28 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { Card, Row,Col } from 'antd';
+const { Meta } = Card;
 
-export default function Card({
+export default function Mac({
   title,
   image,
   price,
-  _id
+  _id,
 }) {
   return (
+      <Row type="flex" justify="center">
+        <Col span={4}>
       <Link to = {`/products/${_id}`}>
-        <img src={image} alt={Image} width="50px" />
-        <p>{title}</p>
-        <p>{price}</p>
-        
+        <Card
+    hoverable
+    style={{ width: 350 }}
+    cover={<img src={image} alt={Image} width="50px" />}
+  >
+    <Meta title={title} description={price} />
+  </Card>,
       </Link>
+      </Col>
+      </Row>
   )
 } 
+

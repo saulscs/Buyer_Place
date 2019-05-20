@@ -4,7 +4,11 @@ import Card from './Card'
 
 export default class allMacs extends Component {
   state = {
-    fullMacs: []
+    fullMacs: [],
+    category: {
+      type: String,
+      enum:["Mac", "Iphone","Ipad","Apple Watch","Accesorios","Otros"]
+     },
   }
   componentDidMount() {
     axios 
@@ -19,7 +23,9 @@ export default class allMacs extends Component {
     const {fullMacs} = this.state
     return (
       <div>
+        <div className="title-detail">
         <h1> Mac</h1>
+        </div>
         {fullMacs.map((Mac,i)=>{
           return <Card key= {i} {...Mac}/>
         })}
