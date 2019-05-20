@@ -1,6 +1,8 @@
 import React from 'react'
 import { Layout } from 'antd';
-import { Card, Col, Row } from 'antd';
+import { Card, Col, Row,} from 'antd';
+import {Link} from 'react-router-dom'
+
 const { Content } = Layout;
 const { Meta } = Card;
 
@@ -8,7 +10,7 @@ class Home extends React.Component {
   render() {
     return (
       <>
-      <Layout>
+      
         {/* cover */}
         <header className="cover">
         <h1 className="cover-title">Buyer Place</h1>
@@ -22,6 +24,7 @@ class Home extends React.Component {
         <Row gutter={16}>
       
       <Col span={8}>
+      <Link to ={'/mac'}>
       <Card
     hoverable
     style={{ width: 240 }}
@@ -29,9 +32,11 @@ class Home extends React.Component {
   >
     <Meta title="MAC"/>
   </Card>
+  </Link>
       </Col>
       
       <Col span={8}>
+        <Link to = {'/iphone'}>
       <Card
     hoverable
     style={{ width: 240 }}
@@ -39,9 +44,11 @@ class Home extends React.Component {
   >
     <Meta title="IPHONE"  />
   </Card>
+      </Link>
       </Col>
       
       <Col span={8}>
+      <Link to ={'/ipad'}>
       <Card
     hoverable
     style={{ width: 240 }}
@@ -49,6 +56,7 @@ class Home extends React.Component {
   >
     <Meta title="IPAD"  />
   </Card>
+  </Link>
       </Col>
       </Row>
       <br/>
@@ -85,7 +93,7 @@ class Home extends React.Component {
       </Col>
     </Row>
         </Content>
-        </Layout>
+        
       </>
     )
   }
