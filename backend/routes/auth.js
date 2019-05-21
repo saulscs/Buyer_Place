@@ -49,15 +49,15 @@ router.get("/loggedin", isLogged, (req, res, next) => {
 
 // Logout
 router.get("/logout", isLogged, (req, res) => {
-  req.logout()
-  req.session.destroy(err => {
-    if (!err) {
-      res
-        .status(200)
-        .clearCookie("connect.sid", { path: "/" })
-        .json({ message: "Logged out" })
-    }
-  })
+  req.logOut()
+  // req.session.destroy(err => {
+  //   if (!err) {
+  //     res
+  //       .status(200)
+  //       .clearCookie("connect.sid", { path: "/" })
+  //       .json({ message: "Logged out" })
+  //   }
+  // })
 })
 
 module.exports = router

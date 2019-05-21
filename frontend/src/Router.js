@@ -8,6 +8,8 @@ import Logout from './components/logout/logout'
 import Macs from './components/Mac/allMacs'
 import CardDetails from './components/Mac/CardDetail'
 import Form from './components/publicar/form' 
+import Iphone from './components/Iphone/allIphones'
+import CardDetail from './components/Iphone/CardDetail';
 
 const Router = () => (
   <Switch>
@@ -16,9 +18,11 @@ const Router = () => (
     <Route exact path ='/login' component ={Login}/>
     <Route exact path = '/profile' component ={Profile}/>
     <Route exact path = '/logout' component={Logout}/>
+    <Route exact path = '/publicar' component ={Form}/>
     <Route exact path = '/mac' component ={Macs}/>
     <Route exact path = '/mac/:id' component ={CardDetails}/>
-    <Route exact path = '/publicar' component ={Form}/>
+    <Route exact path ='/iphone' component ={Iphone}/>
+    <Route exact path = '/iphone/:id' component = {CardDetail}/>
   </Switch>
 )
 

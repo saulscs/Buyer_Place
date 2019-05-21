@@ -63,6 +63,7 @@ class Home extends React.Component {
       <br/>
       <Row gutter={16}> 
       <Col span={8}>
+        <Link to ={'/watch'}>
       <Card
     hoverable
     style={{ width: 240 }}
@@ -70,9 +71,11 @@ class Home extends React.Component {
   >
     <Meta title="Apple Watch"  />
   </Card>
+  </Link>
       </Col>
       
       <Col span={8}>
+        <Link to ={'/accesorios'}>
       <Card
     hoverable
     style={{ width: 240 }}
@@ -80,9 +83,11 @@ class Home extends React.Component {
   >
     <Meta title="Accesorios"  />
   </Card>
+  </Link>
       </Col>
       
       <Col span={8}>
+        <Link to ={'/otros'}>
       <Card
     hoverable
     style={{ width: 240 }}
@@ -90,6 +95,7 @@ class Home extends React.Component {
   >
     <Meta title="Otros"  />
   </Card>
+  </Link>
       </Col>
     </Row>
         </Content>

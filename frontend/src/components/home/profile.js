@@ -14,7 +14,7 @@ export default class profile extends Component {
   render() {
     return (
       <div>
-        <h1>Mis publicaciones</h1>
+        <h1>  Mis publicaciones</h1>
         
       </div>
     )

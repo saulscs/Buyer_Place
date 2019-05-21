@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios"
-import { withRouter } from "react-router-dom"
+
 import {Form, Row, Col,Input, Button,Upload, Icon} from 'antd'
 const { TextArea } = Input
 
@@ -10,7 +10,7 @@ const initialState ={
   description: '',
   image: '',
   category: {enum:[]},
-  address:{pais:'',estado:'',ciudad:'',alcaldia:'',colonia:''}
+  address:'',
 }
 
 
@@ -22,7 +22,7 @@ export default class form extends Component {
   description: '',
   image: '',
   category: {enum:[]},
-  address:{pais:'',estado:'',ciudad:'',alcaldia:'',colonia:''}
+  address:''
 }
 handleChange = event =>{
   const {name,value} = event.target
@@ -33,7 +33,6 @@ handleSubmitForm = event => {
   event.preventDefault()
   axios
   .post('http://localhost:3000/products', this.state)
-  
   .then(res => {
     console.log(res)
     this.setState({ ...initialState })
@@ -52,11 +51,12 @@ handleSubmitForm = event => {
         sm: { span: 16 },
       },
     };
+    
     return (
       <div>
         <h1>  Publica tu anuncio</h1>
       <Row type="flex" justify="space-around" align="middle">
-      <Col span={8} push={1}>
+      <Col span={12} offset={6}>
         <Form {...formItemLayout} onSubmit={this.handleSubmit } lassname="login-form" id="forms">
         
         <Form.Item label="Titulo de tu publicacion">
@@ -101,7 +101,29 @@ handleSubmitForm = event => {
           onChange={this.handleChange}
           />
         </Form.Item>
+ <Form.Item label="Seleciona la categoria correcta">
+ <Input
+          type="text"
+          
+          size="large"
+          placeholder="Mac,Iphone,Ipad,Apple Watch, Accesorios, Otros"
+          name="category"
+          value={this.state.category.enum}
+          onChange={this.handleChange}
+          />
+   </Form.Item>       
         <Form.Item>
+        <Form.Item label="En donde puedes entregar">
+ <Input
+          type="text"
+          
+          size="large"
+          placeholder="Coloca la direccion y pon referencias del lugar"
+          name="address"
+          value={this.state.address}
+          onChange={this.handleChange}
+          />
+   </Form.Item>       
           <Button type="primary" htmlType="submit">
             Enviar
           </Button>
