@@ -9,10 +9,11 @@ export default function Mac({
   price,
   _id,
 }) {
+  console.log(_id)
   return (
       <Row type="flex" justify="center">
         <Col span={4}>
-      <Link to = {`/products/${_id}`}>
+      <Link to = {`/mac/${_id}`}>
         <Card
     hoverable
     style={{ width: 350 }}

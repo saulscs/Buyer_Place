@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Layout, Menu, Input, Button,Icon} from "antd";
 import axios from "axios";
-const { Header } = Layout;
+import { Layout, Menu, Input, Button,Icon} from "antd";
+import Logout from "../logout/logout";
+
 const Search = Input.Search;
 
 export default class NavBar extends Component {
@@ -10,7 +11,8 @@ export default class NavBar extends Component {
     isLogged: false,
     menu_class: "",
     search: ""
-  };
+  }
+  
   checkLogged = () => {
     let loggedUrl = 'http://localhost:3000/auth/loggedin'
     axios
@@ -31,13 +33,13 @@ export default class NavBar extends Component {
     
     return (
       <Layout className="layout">
-        <Header>
+        
           
 
           <Menu
             theme="dark"
             mode="horizontal"
-            selectedKeys="false"
+            // selectedKeys="false"
             style={{
               lineHeight: "45px",
               padding: "7px 5px",
@@ -52,13 +54,13 @@ export default class NavBar extends Component {
               <img className="logo" alt="logo" src="logo2.PNG" ></img>
               </Link>
             </Menu.Item>
-
+            <Menu.Item key="search">
             <Search
               placeholder="Buscar"
               onSearch={value => console.log(value)}
               style={{ width: 300 }}
             />
-
+             </Menu.Item>
             {isLogged ? (
               <>
               <Menu.Item key="Perfil">
@@ -68,13 +70,15 @@ export default class NavBar extends Component {
                 </Menu.Item>
 
                 <Menu.Item key="salir">
-                  <Link to ={'/'}>Salir</Link>
+                  <Logout/>
                   
                 </Menu.Item>
 
+                  <Menu.Item key="publicar">
                 <Link to={"/publicar"}>
                   <Button type="primary">Publicar</Button>
                 </Link>
+                </Menu.Item>
               </>
             ) : (
               <>
@@ -82,13 +86,15 @@ export default class NavBar extends Component {
                   <Link to={"/login"}>Iniciar Sesión</Link>
                 </Menu.Item>
 
+                <Menu.Item key="registro"> 
                 <Link to={"/signup"}>
                   <Button type="primary">Registrate</Button>
                 </Link>
+                </Menu.Item>
               </>
             )}
           </Menu>
-        </Header>
+        
       </Layout>
     );
   }

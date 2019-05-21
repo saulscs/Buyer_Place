@@ -6,6 +6,7 @@ import Login from './components/login/login'
 import Profile from './components/home/profile'
 import Logout from './components/logout/logout'
 import Macs from './components/Mac/allMacs'
+import CardDetails from './components/Mac/CardDetail'
 
 const Router = () => (
   <Switch>
@@ -15,6 +16,7 @@ const Router = () => (
     <Route exact path = '/profile' component ={Profile}/>
     <Route exact path = '/logout' component={Logout}/>
     <Route exact path = '/mac' component ={Macs}/>
+    <Route exact path = '/mac/:id' component ={CardDetails}/>
   </Switch>
 )
 

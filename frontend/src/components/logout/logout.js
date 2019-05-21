@@ -9,10 +9,10 @@ export default class Logout extends Component {
   handleLogout = () =>{
     service 
     .logout()
-    .then (() =>{
+    .then (()=>{
       toastr.success("successful logout!!")
       window.localStorage.clear() 
-      this.props.history.push('/')
+      this.props.history.push('/login')
     })
     .catch(err => toastr.error(err))
   }

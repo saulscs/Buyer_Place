@@ -19,7 +19,8 @@ router.get('/products', (req,res,next)=>{
 })
 
 router.get('/products/:id', (req,res,next)=>{
-  Product.findById(req.param.id)
+  console.log(req.params.id)
+  Product.findById(req.params.id)
   .then(products => res.status(200).json(products))
   .catch(err => res.status(500).json(err))
 })
