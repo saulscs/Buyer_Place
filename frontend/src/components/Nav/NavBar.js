@@ -39,7 +39,7 @@ export default class NavBar extends Component {
           <Menu
             theme="dark"
             mode="horizontal"
-            // selectedKeys="false"
+            selectedKeys ={[]}  
             style={{
               lineHeight: "45px",
               padding: "7px 5px",

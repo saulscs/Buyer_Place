@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Icon, Input, Button } from 'antd'
+import { Form, Icon, Input, Button,Row,Col } from 'antd'
 import AuthService from '../../services/auth'
 import toastr from 'toastr'
 
@@ -35,8 +35,9 @@ class NormalLoginForm extends React.Component {
     const { getFieldDecorator } = this.props.form
     
     return (
-      
-      <Form onSubmit={this.handleSubmit } className="login-form">
+      <Row type="flex" justify="center" align="middle">
+        <Col span={16} push={12}>
+      <Form onSubmit={this.handleSubmit } className="login-form" id="forms">
       <h1>Registrate</h1>
       <Form.Item>
           {getFieldDecorator('name', {
@@ -73,6 +74,8 @@ class NormalLoginForm extends React.Component {
           </Button>
         </Form.Item>
       </Form>
+      </Col>
+      </Row>
     )
   }
 }

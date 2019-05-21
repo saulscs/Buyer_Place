@@ -43,7 +43,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ width: '50vw' }}>
         <LoginForm handleInputs={this.handleInputs} handleSubmit={this.handleSubmit} />
       </div>
     )

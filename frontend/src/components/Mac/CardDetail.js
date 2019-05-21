@@ -21,10 +21,14 @@ export default class CardDetail extends Component {
   }
   render() {
    const  {
+    
     image,
     title,
     price,
-    description
+    description,
+    email,
+    
+  
   } = this.state.data
 
     return (
@@ -32,7 +36,9 @@ export default class CardDetail extends Component {
         <h1>{title}</h1>
         <img src={image} alt={Image} width="720px" />
         <p>{price}</p>
+        <p>{email}</p>
         <p>{description}</p>
+        
       </div>
     )
   }
