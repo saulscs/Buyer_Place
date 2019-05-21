@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import { Button} from 'antd';
 
 
 export default class CardDetail extends Component {
@@ -32,10 +32,13 @@ export default class CardDetail extends Component {
   } = this.state.data
 
     return (
-      <div>
+      <div className="container">
         <h1>{title}</h1>
         <img src={image} alt={Image} width="720px" />
         <p>{price}</p>
+        <Button type="primary" icon="user" size={"large"}>
+          Contactar vendedor
+        </Button>
         <p>{email}</p>
         <p>{description}</p>
         
