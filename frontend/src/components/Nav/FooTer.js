@@ -10,7 +10,7 @@ export default class FooTer extends Component {
         <Layout>
           <Footer 
           style={{  textAlign: 'center' , backgroundColor: 'white'}}>
-          Saul Corona.Inc ©2019 All rigths reserve
+          Saul Corona.Inc ©2019 made with love at Ironhack
 
           </Footer>
         </Layout>

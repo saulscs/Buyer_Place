@@ -19,7 +19,6 @@ function LoginForm({ handleInputs, handleSubmit }) {
       </Form>
       </Col>
       </Row>
-      
   )
 }
 

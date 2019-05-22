@@ -38,7 +38,7 @@ class AuthService {
 
   loggedin = () => {
     return this.service
-      .get('/loggedin')
+      .get('auth/loggedin')
       .then(response => response)
       .catch(err => err)
   }
