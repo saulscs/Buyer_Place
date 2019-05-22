@@ -12,8 +12,7 @@ import Iphone from './components/Iphone/allIphones'
 import CardDetail from './components/Iphone/CardDetail'
 import Ipad from './components/Ipad/allIpads'
 import CardDetail2 from './components/Ipad/CardDetail'
-import Watch from './components/Watch/allWatch'
-import CardWatchs from './components/Watch/CardDetail'
+
 
 const Router = () => (
   <Switch>
@@ -29,8 +28,6 @@ const Router = () => (
     <Route exact path = '/iphone/:id' component = {CardDetail}/>
     <Route exact path = '/ipad' component ={Ipad}/>
     <Route exact path = '/ipad/:id' component ={CardDetail2}/>
-    <Route exact path = '/watch' component ={Watch}/>
-    <Route exact patch = '/watch/:id' component = {CardWatchs}/>
   </Switch>
 )
 

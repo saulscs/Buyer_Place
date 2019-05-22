@@ -26,8 +26,8 @@ export default class allWatch extends Component {
         <div className="title-detail">
         <h1> Apple Watch</h1>
         </div>
-        {fullWatchs.map((Watch,i)=>{
-          return <Card key= {i} {...Watch}/>
+        {fullWatchs.map((Watchs,i)=>{
+          return <Card key= {i} {...Watchs}/>
         })}
       </div>
     )

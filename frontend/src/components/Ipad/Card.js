@@ -11,7 +11,7 @@ export default function Mac({
 }) {
   console.log(_id)
   return (
-      <Row type="flex" justify="center">
+      <Row type="flex" justify="center" gutter={16}>
         <Col span={4}>
       <Link to = {`/ipad/${_id}`}>
         <Card

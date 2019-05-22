@@ -42,7 +42,7 @@ class Home extends React.Component {
     style={{ width: 240 }}
     cover={<img alt="Iphone" src="/Iphone.png" />}
   >
-    <Meta title="IPHONE"  />
+    <Meta title="IPHONE"/>
   </Card>
       </Link>
       </Col>
@@ -54,7 +54,7 @@ class Home extends React.Component {
     style={{ width: 240 }}
     cover={<img alt="IPad" src="/Ipad.png" />}
   >
-    <Meta title="IPAD"  />
+    <Meta title="IPAD"/>
   </Card>
   </Link>
       </Col>
@@ -69,7 +69,7 @@ class Home extends React.Component {
     style={{ width: 240 }}
     cover={<img alt="Apple Watch" src="/AppleWatch.png" />}
   >
-    <Meta title="Apple Watch"  />
+    <Meta title="Apple Watch"/>
   </Card>
   </Link>
       </Col>
@@ -81,7 +81,7 @@ class Home extends React.Component {
     style={{ width: 240 }}
     cover={<img alt="Accesorios" src="/Accesorios.jpg" />}
   >
-    <Meta title="Accesorios"  />
+    <Meta title="Accesorios"/>
   </Card>
   </Link>
       </Col>
@@ -93,7 +93,7 @@ class Home extends React.Component {
     style={{ width: 240 }}
     cover={<img alt="Otros" src="/Otros.jpg" />}
   >
-    <Meta title="Otros"  />
+    <Meta title="Otros"/>
   </Card>
   </Link>
       </Col>
