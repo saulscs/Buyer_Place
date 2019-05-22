@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Card from './Card'
 
-export default class allIpads extends Component {
+export default class allAccesorios extends Component {
   state = {
-    fullIpads: [],
+    fullAccesorios: [],
     category: {
       type: String,
       enum:["Mac", "Iphone","Ipad","Apple Watch","Accesorios","Otros"]
@@ -12,21 +12,21 @@ export default class allIpads extends Component {
   }
   componentDidMount() {
     axios 
-    .get ('http://localhost:3000/products/?category=Ipad')
+    .get ('http://localhost:3000/products/?category=Accesorios')
     .then (({data})=>{
-      this.setState({fullIpads:data})
+      this.setState({fullAccesorios:data})
     })
     .catch(err => console.log(err))
   }
   render() {
-    const {fullIpads} = this.state
+    const {fullAccesorios} = this.state
     return (
       <div>
         <div className="title-detail">
-        <h1> Ipad</h1>
+        <h1> Accesorios</h1>
         </div>
-        {fullIpads.map((Ipad,i)=>{
-          return <Card key= {i} {...Ipad}/>
+        {fullAccesorios.map((Accesorios,i)=>{
+          return <Card key= {i} {...Accesorios}/>
         })}
       </div>
     )

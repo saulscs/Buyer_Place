@@ -7,12 +7,12 @@ export default class allWatch extends Component {
     fullWatchs: [],
     category: {
       type: String,
-      enum:["Mac", "Iphone","Ipad","Apple Watch","Accesorios","Otros"]
+      enum:["Mac", "Iphone","Ipad","Apple_Watch","Accesorios","Otros"]
      },
   }
   componentDidMount() {
     axios 
-    .get ('http://localhost:3000/products')
+    .get ('http://localhost:3000/products/?category=Apple_Watch')
     .then (({data})=>{
       this.setState({fullWatchs:data})
     })

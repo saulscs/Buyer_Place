@@ -25,9 +25,7 @@ export default class CardDetail extends Component {
     title,
     price,
     description,
-    email,
     
-  
   } = this.state.data
 
     return (
@@ -41,8 +39,6 @@ export default class CardDetail extends Component {
           Contactar vendedor
           
         </Button>
-        
-        <p>{email}</p>
         <p>{description}</p>
         
       </div>

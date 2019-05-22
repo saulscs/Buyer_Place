@@ -3,20 +3,21 @@ import {Link} from 'react-router-dom'
 import { Card, Row,Col } from 'antd';
 const { Meta } = Card;
 
-export default function Watch({
+export default function Mac({
   title,
   image,
   price,
   _id,
 }) {
+  console.log(_id)
   return (
-      <Row type="flex" justify="center">
+      <Row type="flex" justify="center" gutter={16}>
         <Col span={4}>
-      <Link to = {`/watch/${_id}`}>
+      <Link to = {`/ipad/${_id}`}>
         <Card
     hoverable
     style={{ width: 350 }}
-    cover={<img src={image} alt={image} width="50px" />}
+    cover={<img src={image} alt={Image} width="50px" />}
   >
     <Meta title={title} description={price} />
   </Card>
@@ -25,3 +26,4 @@ export default function Watch({
       </Row>
   )
 } 
+

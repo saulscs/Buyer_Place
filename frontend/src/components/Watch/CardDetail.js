@@ -8,8 +8,7 @@ export default class CardDetail extends Component {
   }
 
   componentDidMount(){
-    const { id } = this.props.match.params
-    console.log(id)
+    const {id} = this.props.match.params
     axios
     .get(`http://localhost:3000/products/${id}`)
     .then(({data}) => {
@@ -20,14 +19,10 @@ export default class CardDetail extends Component {
   }
   render() {
    const  {
-    
     image,
     title,
     price,
-    description,
-    email,
-    
-  
+    description
   } = this.state.data
 
     return (
@@ -41,10 +36,7 @@ export default class CardDetail extends Component {
           Contactar vendedor
           
         </Button>
-        
-        <p>{email}</p>
         <p>{description}</p>
-        
       </div>
     )
   }

@@ -12,7 +12,7 @@ export default class allIphones extends Component {
   }
   componentDidMount() {
     axios 
-    .get ('http://localhost:3000/products')
+    .get ('http://localhost:3000/products/?category=Iphone')
     .then (({data})=>{
       this.setState({fullIphones:data})
     })

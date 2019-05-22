@@ -13,10 +13,18 @@ router.get('/', (req, res, next) => {
 //CRUD
 
 router.get('/products', (req,res,next)=>{
-  Product.find()
-  .then(products => res.status(200).json(products))
-  .catch(err =>res.status(500).json(err))
+  if(req.query){
+    let {category} = req.query
+      Product.find({category:category})
+      .then(products => res.status(200).json(products))
+      .catch(err =>res.status(500).json(err))    
+  }else{
+    Product.find()
+      .then(products => res.status(200).json(products))
+      .catch(err =>res.status(500).json(err))
+  }
 })
+  
 
 router.get('/products/:id', (req,res,next)=>{
   console.log(req.params.id)

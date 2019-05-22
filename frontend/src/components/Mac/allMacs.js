@@ -12,7 +12,7 @@ export default class allMacs extends Component {
   }
   componentDidMount() {
     axios 
-    .get ('http://localhost:3000/products')
+    .get ('http://localhost:3000/products/?category=Mac')
     .then (({data})=>{
       this.setState({fullMacs:data})
     })
