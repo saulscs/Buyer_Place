@@ -7,8 +7,9 @@ Buyer Place is a market place design to connect people in a easy way to sell and
 
 
 If you want taste my project just clone this repo and then:
--In the backend folder install  `npm i`
--In the frontend folder install `yarn install`
+
+* -In the backend folder install  `npm i` and run it with `npm run dev`
+* In the frontend folder install `yarn install` and run it with `yarn start`
 
 so now you can run it.
 
